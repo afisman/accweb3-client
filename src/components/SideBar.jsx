@@ -15,7 +15,7 @@ const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => {
                     className='w-1/2 h-1/2' />)
                 :
                 (<img src={imgUrl} alt='fund_logo'
-                    className={`w-1/2 h-1/2 ${isActive != name && 'grayscale'}`} />)
+                    className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />)
         }
     </div>
 }
@@ -25,7 +25,7 @@ const SideBar = () => {
     const [isActive, setIsActive] = useState('dashboard');
 
     const { disconnect } = useStateContext();
-    console.log('I am in the sidebar')
+    console.log(navlinks)
     return (
         <div className='flex justify-between items-center flex-col sticky top-5 h-[93vh]'>
             <Link to='/'>
@@ -35,8 +35,8 @@ const SideBar = () => {
             <div className='flex-1 flex-col justify-between items-center
              bg-[#1c1c24] rounded-[20px] w-[76px] py-4 mt-12'>
                 <div className='flex flex-col justify-center items-center gap-3'>
-                    {navlinks.map((link) => (
-                        <Icon
+                    {navlinks.map((link) => {
+                        return <Icon
                             key={link.name}
                             {...link}
                             isActive={isActive}
@@ -50,7 +50,9 @@ const SideBar = () => {
                                 }
                             }}
                         />
-                    ))}
+                    }
+
+                    )}
                 </div>
                 <Icon
                     styles='bg-[#1c1c24] shadow.secondary'
