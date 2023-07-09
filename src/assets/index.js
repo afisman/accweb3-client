@@ -1,4 +1,3 @@
-import createCampaign from './create-campaign.svg';
 import dashboard from './dashboard.svg';
 import logo from './logo.svg';
 import logout from './logout.svg';
@@ -16,7 +15,6 @@ import hourglass from './hourglass.svg';
 
 export {
     tagType,
-    createCampaign,
     dashboard,
     logo,
     logout,

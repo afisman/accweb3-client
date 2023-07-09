@@ -22,11 +22,6 @@ export default function Home() {
               <code className="code">src/index.js</code>, then modify the{" "}
               <code className="code">src/App.js</code> file!
             </p>
-
-            <div className="connect">
-              <ConnectWallet dropdownPosition={{ side: 'bottom', align: 'center' }} />
-            </div>
-
             <div className="grid">
               <a href="https://portal.thirdweb.com/" className="card">
                 <h2>Portal &rarr;</h2>

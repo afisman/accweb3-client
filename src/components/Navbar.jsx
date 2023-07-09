@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import CustomButton from './CustomButton';
+import { ConnectWallet } from "@thirdweb-dev/react";
 import { search } from '../assets';
 
 import { useStateContext } from '../context';
@@ -31,14 +31,11 @@ const Navbar = () => {
             </div>
 
             <div className='sm:flex hidden flex-row justify-end gap-4'>
-                <CustomButton
-                    btnType='button'
-                    title={address ? 'Download transactions' : 'Connect'}
-                    styles={address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
-                    handleClick={() => {
-                        address ? disconnect() : connect()
-                    }}
-                />
+                <div className="connect">
+                    <ConnectWallet dropdownPosition={{ side: 'bottom', align: 'center' }}
+                        className={`font-epilogue font-semibold text-[16px] leading-[26px]
+            text-white min-h-[52px] px-4 rounded-[10px] ${address ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}`} />
+                </div>
 
             </div>
 
